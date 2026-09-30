@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rafael Kobayashi Santos | Análise de dados e automações</title>
+<meta name="description" content="Portfólio de Rafael Kobayashi Santos: pipelines de dados, web scraping e dashboards em Python e Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#12121a;--line:#23232f;--text:#e7e8ee;--muted:#9a9cab;--accent:#4fd1e0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.15;margin:0;font-weight:600}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(10,10,15,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+nav .brand{font-family:Outfit,sans-serif;font-weight:600;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+nav ul a:hover{color:var(--text)}
+.langbtn{font:600 .85rem Outfit,sans-serif;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer;transition:border-color .2s,color .2s}
+.langbtn:hover{border-color:var(--accent);color:var(--accent)}
+section{padding:96px 0}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:36px}
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 72px}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.2rem);font-weight:700;letter-spacing:-.02em;max-width:12ch}
+.hero .role{font-family:Outfit,sans-serif;color:var(--accent);font-size:clamp(1.1rem,2.2vw,1.4rem);margin:18px 0 20px}
+.hero p{max-width:58ch;color:var(--muted);margin:0 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-weight:600;transition:border-color .2s,background .2s,color .2s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#04161a}
+.btn.primary:hover{background:#7fe2ee;color:#04161a}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:56px;align-items:center;font-family:Outfit,sans-serif;font-size:.95rem;color:var(--muted)}
+.flow span{padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.flow svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+.about p{margin:0 0 16px;color:var(--muted);max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.tag{padding:6px 13px;border-radius:6px;background:var(--surface);border:1px solid var(--line);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.card{display:flex;flex-direction:column;padding:26px;background:var(--surface);border:1px solid var(--line);border-radius:14px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--c,var(--accent));box-shadow:0 0 0 1px var(--c,var(--accent)),0 14px 34px rgba(0,0,0,.4)}
+.card svg.ico{width:34px;height:34px;stroke:var(--c);fill:none;stroke-width:1.6;margin-bottom:18px}
+.card h3{font-size:1.25rem;margin-bottom:10px}
+.card p{margin:0 0 18px;color:var(--muted);font-size:1rem;flex:1}
+.card .tags{margin-bottom:20px}
+.card .tag{font-size:.82rem;padding:4px 10px}
+.card .links{display:flex;gap:16px;font-weight:600}
+.card .links a{color:var(--c);text-decoration:none}
+.card .links a:hover{text-decoration:underline}
+.lang{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.88rem;margin-bottom:14px}
+.lang i{width:10px;height:10px;border-radius:50%;background:#3776ab}
+.timeline{border-left:1px solid var(--line);margin-left:6px}
+.item{position:relative;padding:0 0 38px 30px}
+.item:last-child{padding-bottom:0}
+.item::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.item h3{font-size:1.2rem}
+.item .meta{color:var(--accent);font-size:.95rem;margin:4px 0 10px}
+.item ul{margin:0;padding-left:18px;color:var(--muted)}
+.item li{margin-bottom:6px;max-width:66ch}
+footer{border-top:1px solid var(--line);padding:72px 0 48px}
+footer h2{margin-bottom:14px}
+footer p{color:var(--muted);max-width:52ch;margin:0 0 28px}
+footer small{display:block;margin-top:56px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:760px){nav ul{display:none}.about{grid-template-columns:1fr;gap:32px}section{padding:72px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap">
+<a class="brand" href="#topo">Rafael Kobayashi</a>
+<ul><li><a href="#sobre">Sobre</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#experiencia">Experiência</a></li><li><a href="#contato">Contato</a></li></ul>
+<button id="lang" class="langbtn" type="button" aria-label="Switch language / Trocar idioma">EN</button>
+</div></nav>
+
+<main id="topo">
+<header class="hero"><div class="wrap">
+<h1>Rafael Kobayashi Santos</h1>
+<div class="role">Engenheiro de análise de dados e automações</div>
+<p>Formado em Ciência de Dados pela Fatec Cotia. Construo pipelines que coletam, limpam e transformam dados da web em análises e dashboards, e automatizo tarefas repetitivas para que a equipe gaste tempo decidindo, não copiando planilhas.</p>
+<div class="btns">
+<a class="btn primary" href="#projetos">Ver projetos</a>
+<a class="btn" href="https://www.linkedin.com/in/rafaelkobayashi/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/RafaelKobayashiSantos" target="_blank" rel="noopener">GitHub</a>
+</div>
+<div class="flow" aria-label="Fluxo de trabalho">
+<span>Coleta</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<span>Limpeza</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<span>Análise</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<span>Dashboard</span>
+</div>
+</div></header>
+
+<section id="sobre"><div class="wrap">
+<h2>Sobre mim</h2>
+<div class="about reveal">
+<div>
+<p>Sou de São Paulo e me formei em Ciência de Dados na Fatec Cotia. No estágio, criei scripts que economizaram horas da equipe, recuperei um dashboard que estava parado e melhorei a metodologia de pesquisa de mercado.</p>
+<p>Fui vice-campeão do hackathon da faculdade, realizado em parceria com a CPTM. Meus projetos pessoais seguem a mesma linha: pegar um problema real, automatizar a coleta e entregar um resultado que alguém consiga usar.</p>
+</div>
+<div class="tags" aria-label="Competências">
+<span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Playwright</span><span class="tag">Web scraping</span><span class="tag">ETL</span><span class="tag">AsyncIO</span><span class="tag">Regex</span><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Git e GitHub</span><span class="tag">Automação</span>
+</div>
+</div>
+</div></section>
+
+<section id="projetos"><div class="wrap">
+<h2>Projetos</h2>
+<div class="grid">
+
+<article class="card reveal" style="--c:#4fd1e0">
+<svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>
+<div class="lang"><i></i>Python</div>
+<h3>Análise do mercado de aluguel em Cotia</h3>
+<p>Pipeline completo: coleta de anúncios de aluguel no ZAP Imóveis com Playwright, limpeza e criação de variáveis com Pandas, e um dashboard em Power BI com preço médio por m², ranking de bairros e mapa interativo.</p>
+<div class="tags"><span class="tag">Playwright</span><span class="tag">Pandas</span><span class="tag">Power BI</span><span class="tag">ETL</span></div>
+<div class="links"><a href="https://github.com/RafaelKobayashiSantos/Real-State-Market-Analysis-Brasil-Cotia" target="_blank" rel="noopener">Ver repositório</a></div>
+</article>
+
+<article class="card reveal" style="--c:#7ee0a0">
+<svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+<div class="lang"><i></i>Python</div>
+<h3>LeadFinder</h3>
+<p>Coletor de dados do Google Maps que busca qualquer termo, rola os resultados, abre cada negócio e devolve uma tabela limpa com nome, nota, localização e coordenadas. A arquitetura separa extração e tratamento para facilitar evoluções.</p>
+<div class="tags"><span class="tag">Playwright</span><span class="tag">AsyncIO</span><span class="tag">Pandas</span><span class="tag">Regex</span></div>
+<div class="links"><a href="https://github.com/RafaelKobayashiSantos/LeadFinder-Demo-" target="_blank" rel="noopener">Ver repositório</a><a href="https://colab.research.google.com/drive/1kwApfSHD_no4KHo62Y2_VYJz5uaPGDlc#scrollTo=dzZoyeUKKEpd" target="_blank" rel="noopener">Testar no Colab</a></div>
+</article>
+
+<article class="card reveal" style="--c:#f0b45a">
+<svg class="ico" viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 8-10"/><path d="M3 21h18"/></svg>
+<div class="lang"><i></i>Python</div>
+<h3>Buscapé Scrapper</h3>
+<p>Script que acompanha preços de produtos no Buscapé com Playwright, guarda o histórico de preços e exporta os resultados para planilha, servindo de base para comparar variações ao longo do tempo.</p>
+<div class="tags"><span class="tag">Playwright</span><span class="tag">Histórico de preços</span><span class="tag">Excel</span></div>
+<div class="links"><a href="https://github.com/RafaelKobayashiSantos/Buscape_Scrapper" target="_blank" rel="noopener">Ver repositório</a></div>
+</article>
+
+</div>
+</div></section>
+
+<section id="experiencia"><div class="wrap">
+<h2>Experiência</h2>
+<div class="timeline reveal">
+<div class="item">
+<h3>Estágio em análise de dados</h3>
+<div class="meta">Análise de dados e automação</div>
+<ul>
+<li>Automatizei uma rotina de análise que passou de 30 para 120 análises por dia.</li>
+<li>Recuperei um dashboard que estava fora de uso e o recoloquei em operação.</li>
+<li>Melhorei a metodologia de pesquisa de mercado da equipe.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Hackathon Fatec, em parceria com a CPTM</h3>
+<div class="meta">2º lugar</div>
+<ul><li>Solução desenvolvida em equipe para um desafio proposto pela CPTM.</li></ul>
+</div>
+<div class="item">
+<h3>Ciência de Dados, Fatec Cotia</h3>
+<div class="meta">Graduação concluída</div>
+<ul><li>Formação em análise, estatística, programação e visualização de dados.</li></ul>
+</div>
+</div>
+</div></section>
+</main>
+
+<footer id="contato"><div class="wrap">
+<h2>Vamos conversar</h2>
+<p>Estou aberto a oportunidades em análise de dados, engenharia de dados e automação. O caminho mais rápido é me chamar no LinkedIn.</p>
+<div class="btns">
+<a class="btn primary" href="https://www.linkedin.com/in/rafaelkobayashi/" target="_blank" rel="noopener">Falar no LinkedIn</a>
+<a class="btn" href="https://github.com/RafaelKobayashiSantos" target="_blank" rel="noopener">Ver o GitHub</a>
+</div>
+<small>Rafael Kobayashi Santos, São Paulo</small>
+</div></footer>
+
+<script>
+(function(){
+var nav=document.getElementById('nav');
+function s(){nav.classList.toggle('scrolled',window.scrollY>20)}
+s();window.addEventListener('scroll',s,{passive:true});
+var els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+})();
+(function(){
+var D={
+"Sobre":"About","Projetos":"Projects","Experiência":"Experience","Contato":"Contact",
+"Engenheiro de análise de dados e automações":"Data analytics and automation engineer",
+"Formado em Ciência de Dados pela Fatec Cotia. Construo pipelines que coletam, limpam e transformam dados da web em análises e dashboards, e automatizo tarefas repetitivas para que a equipe gaste tempo decidindo, não copiando planilhas.":"Data Science graduate from Fatec Cotia. I build pipelines that collect, clean and turn web data into analyses and dashboards, and I automate repetitive tasks so teams spend their time deciding, not copying spreadsheets.",
+"Ver projetos":"View projects","Coleta":"Collection","Limpeza":"Cleaning","Análise":"Analysis","Sobre mim":"About me",
+"Sou de São Paulo e me formei em Ciência de Dados na Fatec Cotia. No estágio, criei scripts que economizaram horas da equipe, recuperei um dashboard que estava parado e melhorei a metodologia de pesquisa de mercado.":"I'm from São Paulo and graduated in Data Science at Fatec Cotia. During my internship I built scripts that saved the team hours, brought a stalled dashboard back to life and improved the market research methodology.",
+"Fui vice-campeão do hackathon da faculdade, realizado em parceria com a CPTM. Meus projetos pessoais seguem a mesma linha: pegar um problema real, automatizar a coleta e entregar um resultado que alguém consiga usar.":"I was runner-up at my university's hackathon, held in partnership with CPTM. My personal projects follow the same idea: take a real problem, automate the data collection and deliver a result someone can actually use.",
+"Automação":"Automation","Git e GitHub":"Git and GitHub",
+"Análise do mercado de aluguel em Cotia":"Rental market analysis in Cotia",
+"Pipeline completo: coleta de anúncios de aluguel no ZAP Imóveis com Playwright, limpeza e criação de variáveis com Pandas, e um dashboard em Power BI com preço médio por m², ranking de bairros e mapa interativo.":"End-to-end pipeline: rental listings collected from ZAP Imóveis with Playwright, cleaning and feature engineering with Pandas, and a Power BI dashboard with average price per m², district ranking and an interactive map.",
+"Ver repositório":"View repository","Testar no Colab":"Try it in Colab",
+"Coletor de dados do Google Maps que busca qualquer termo, rola os resultados, abre cada negócio e devolve uma tabela limpa com nome, nota, localização e coordenadas. A arquitetura separa extração e tratamento para facilitar evoluções.":"Google Maps data collector that searches any term, scrolls the results, opens each business and returns a clean table with name, rating, location and coordinates. The architecture separates extraction from processing to make future changes easier.",
+"Script que acompanha preços de produtos no Buscapé com Playwright, guarda o histórico de preços e exporta os resultados para planilha, servindo de base para comparar variações ao longo do tempo.":"Script that tracks product prices on Buscapé with Playwright, stores the price history and exports results to a spreadsheet, as a base for comparing price changes over time.",
+"Histórico de preços":"Price history",
+"Estágio em análise de dados":"Data analysis internship","Análise de dados e automação":"Data analysis and automation",
+"Automatizei uma rotina de análise que passou de 30 para 120 análises por dia.":"Automated an analysis routine that went from 30 to 120 analyses per day.",
+"Recuperei um dashboard que estava fora de uso e o recoloquei em operação.":"Recovered an unused dashboard and put it back into operation.",
+"Melhorei a metodologia de pesquisa de mercado da equipe.":"Improved the team's market research methodology.",
+"Hackathon Fatec, em parceria com a CPTM":"Fatec hackathon, in partnership with CPTM","2º lugar":"2nd place",
+"Solução desenvolvida em equipe para um desafio proposto pela CPTM.":"Solution built by a team for a challenge proposed by CPTM.",
+"Ciência de Dados, Fatec Cotia":"Data Science, Fatec Cotia","Graduação concluída":"Degree completed",
+"Formação em análise, estatística, programação e visualização de dados.":"Training in analysis, statistics, programming and data visualization.",
+"Vamos conversar":"Let's talk",
+"Estou aberto a oportunidades em análise de dados, engenharia de dados e automação. O caminho mais rápido é me chamar no LinkedIn.":"I'm open to opportunities in data analysis, data engineering and automation. The fastest way to reach me is on LinkedIn.",
+"Falar no LinkedIn":"Message on LinkedIn","Ver o GitHub":"View GitHub"};
+var T={pt:document.title,en:"Rafael Kobayashi Santos | Data analytics and automation"};
+var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+function norm(s){return s.replace(/\s+/g,' ').trim()}
+while(n=w.nextNode()){if(n.parentNode.tagName==='SCRIPT')continue;var k=norm(n.nodeValue);if(D[k])nodes.push([n,n.nodeValue,D[k]])}
+var btn=document.getElementById('lang');
+function set(l){
+nodes.forEach(function(x){x[0].nodeValue=l==='en'?x[2]:x[1]});
+document.documentElement.lang=l==='en'?'en':'pt-BR';
+document.title=T[l==='en'?'en':'pt'];
+btn.textContent=l==='en'?'PT':'EN';
+try{localStorage.setItem('lang',l)}catch(e){}
+}
+btn.addEventListener('click',function(){set(document.documentElement.lang==='en'?'pt':'en')});
+var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+if(saved==='en')set('en');
+})();
+</script>
+</body>
+</html>
